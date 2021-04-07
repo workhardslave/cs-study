@@ -1,6 +1,6 @@
 # TCP (Transmission Control Protocol)
 ## 특성 
-TCP는 양종단 호스트 내 프로세스 상호 간에 신뢰적인 연결지향성 서비스를 제공하는 프로토콜로 다음과 같은 특성을 갖는다.
+TCP는 양 종단 호스트 내 프로세스 상호 간에 신뢰적인 연결지향성 서비스를 제공하는 프로토콜로 다음과 같은 특성을 갖는다.
 - Connection-Oriented : 연결지향적. 송신과 수신 지점을 연결한 후 통신한다.
 - Point to Point : 각 연결이 정확히 2개의 종단점을 가지고 있다.
 - In-order delivery : 송신자가 보낸 순서대로 수신자가 데이터를 받는다.</br></br>
@@ -88,7 +88,7 @@ FIN segment와 ACK 주고받으면 클라이언트→ 서버 방향으로의 데
 
 ※ 예시에서 클라이언트가 ACK을 보내더라도 얼마간 time wait 를 유지한 후 커넥션이 끊어진다. 만약 client가 마지막으로 보낸 ACK가 손실되면 서버는 timeout 되어 FIN segment를 재전송 할 것이기 때문. (클라이언트는 wait상태에서 ACK 재전송할 수 있음.)</br></br></br>
 
-## 2) half open connection
+## 3) half open connection
 ![img](https://github.com/workhardslave/cs-study/blob/main/Network/img/TCP%203-way-handshake_4.png?raw=true)
 - **half open connection : 2-way handshake에 발생하는 문제점**
 
