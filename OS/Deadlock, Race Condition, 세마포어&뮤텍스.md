@@ -143,11 +143,20 @@ Readers-Writers Problem 는 세마포어를 통해 프로세스 간 동기화를
 ### (4). 세마포어(Semaphore) vs 뮤텍스(Mutex) 
 - 뮤텍스는 Locking 메커니즘으로 __락을 걸은 쓰레드만이__ 임계 영역을 나갈때 락을 해제할 수 있다. 
 - 세마포어는 Signaling 메커니즘으로 락을 걸지 않은 쓰레드도 signal을 사용해 락을 해제할 수 있다. 
-- 세마포어 변수를 1로 설정하면 뮤텍스처럼 활용할 수 있다. *세마포어와 뮤텍스를 별개로 보거나, 뮤텍스를 세마포어의 일종으로 보는 것으로 나뉘는것 같아요*
+- 세마포어 변수를 1로 설정하면 뮤텍스처럼 활용할 수 있다. *세마포어와 뮤텍스를 별개로 보거나, 뮤텍스를 세마포어의 일종으로 보는 것으로 나뉘는것 같아요* 
 
 <br></br>
-<br></br>
+## 5. Monitor
+운영체제 커널로 제공되는 세마포어와 뮤텍스와 달리 모니터는 프레임워크나 라이브러리 그 자체에서 제공되는 동기화 기법이다. 자바 쓰레드 동기화 모델은 __모니터__ 개념을 적용하고 있다. 
+  
+- 시스템 호출과 같은 개념. 인터페이스만 제공한다
+- 임계구역으로 지정된 변수나 자원에 접근하고자 하는 프로세스는 직접 P()나 V()를 사용하지 않고 모니터에 작업 요청을 한다. 
+- 모니터는 요청받은 작업을 Wait Queue에 저장한후 순서대로 처리하고 그 결과만 해당 프로세스에 알려준다.
+- 세마포어보다 간단한 방법으로 임계구역을 보호할 수 있다.
+- example code : https://parkcheolu.tistory.com/15
 
+
+<br></br>
 
 
 >Reference</br>
@@ -157,6 +166,7 @@ Readers-Writers Problem 는 세마포어를 통해 프로세스 간 동기화를
 >https://m.blog.naver.com/PostList.nhn?blogId=skwd123 </br>
 >https://parksb.github.io/article/10.html </br>
 >https://mangkyu.tistory.com/104 </br>
+>https://seungahyoo.tistory.com/69 </br>
 
 >Image Resource</br>
 >https://prepinsta.com/operating-systems/deadlock-introduction/</br>
