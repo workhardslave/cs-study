@@ -47,7 +47,7 @@ __네가지 조건을 모두 만족시에 Deadlock이 발생한다.__
   - 그러나 프로세스 간 임계영역 접근 빈도수가 다른 경우 progress 만족 못함
   ```{.cpp}{
     do{ 
-        while(turn ! =0) 
+        while(turn ! =0);
         critical section
         turn = 1;
         remainder section
@@ -61,7 +61,7 @@ __네가지 조건을 모두 만족시에 Deadlock이 발생한다.__
   ```{.cpp}{
     do{ 
         flag[i] = true
-        while(flag[j])
+        while(flag[j]);
         critical section
         flag[i]=false
         remainder section
