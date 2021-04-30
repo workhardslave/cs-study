@@ -54,11 +54,6 @@ HTTP 프로토콜에선 비연결성(Connectionless)과 비상태성(Stateless)�
 - Secure: HTTPS 프로토콜에서만 쿠키를 전송(쿠키 탈취문제 예방)
 - HttpOnly: 브라우저에서 쿠키 접근 불가(Cross Site Scripting 공격 방지)
 
-### 쿠키의 단점
-
-- 쿠키에 대한 매 정보를 헤더가 추가해서 보내기 때문에 추가적인 트래픽 발생
-- 민감한 정보를 쿠키에 보관하다가 유출되면 문제 발생
-
 ### Cookie vs. LocalStorage
 
 LocalStorage 또한 쿠키와 같이 클라이언트에 정보를 저장하는 방식
@@ -68,6 +63,11 @@ LocalStorage 또한 쿠키와 같이 클라이언트에 정보를 저장하는 �
 - 필요할 때 언제든 사용 가능(쿠키는 서버 접속시에 자동 송신)
 
 그러나 LocalStorage는 XSS(Cross Site Scripting)공격에 취약, 그러나 CSRF 공격엔 더 안전
+
+### 쿠키의 단점
+
+- 쿠키에 대한 매 정보를 헤더가 추가해서 보내기 때문에 추가적인 트래픽 발생
+- 민감한 정보를 쿠키에 보관하다가 유출되면 문제 발생
 
 ## 세션
 
