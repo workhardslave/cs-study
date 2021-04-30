@@ -100,7 +100,7 @@ JWT란 JSON 형식 웹 토큰으로서 일반적으로 클라이언트와 서버
 
 ### 토큰의 구성
 
-토큰은 <font color="red">Header</font>, <font color="purple">Payload</font>, <font color="blue">Signature</font>로 구성된다.
+토큰은 <span color="red">Header</span>, <span color="purple">Payload</span>, <span color="blue">Signature</span>로 구성된다.
 
 #### Header(헤더)
 
@@ -112,13 +112,13 @@ JWT란 JSON 형식 웹 토큰으로서 일반적으로 클라이언트와 서버
 
 #### Signature(서명)
 
-<font color="red">Header</font>와 <font color="purple">Payload</font>를 인코딩 후 시크릿과 함께 해싱하여 <font color="blue">Signature</font>를 생성한다.
+<span color="red">Header</span>와 <span color="purple">Payload</span>를 인코딩 후 시크릿과 함께 해싱하여 <span color="blue">Signature</span>를 생성한다.
 
 ![JWT](./img/Cookie_Session_JWT_Cache0.png)
 
 위와 같은 방법으로 Header.Payload.Signature 와 같은 형태의 토큰이 생성된다.
 
-> 예) <font color="red">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</font>.<font color="purple">eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ</font>.<font color="blue">SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</font>
+> 예) <span color="red">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>.<span color="purple">eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ</span>.<span color="blue">SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</span>
 
 이처럼 복잡해 보이지만 해당 토큰을 서버에서 받으면 알고리즘에 따라 해석하고 검증을 하게된다.
 
