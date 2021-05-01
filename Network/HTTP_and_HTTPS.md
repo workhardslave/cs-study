@@ -29,7 +29,8 @@ HTTP는 인터넷에서 사용하는 웹 서버와 사용자의 인터넷 브라
 ## 1. 정의
 
 - SSL은 인터넷 상에서 데이터를 안전하게 전송하기 위한 인터넷 암호화 통신 프로토콜이다.
-- 응용계층과 전송계층 사이에서 독립적으로 동작한다. (Session layer)
+- 응용계층과 전송계층 사이에서 독립적으로 동작한다. 
+  - Application은 SSL을 TCP로 인식하고, TCP는 SSL을 Application으로 인식 
 
 ![img](https://github.com/workhardslave/cs-study/blob/main/Network/img/HTTP_and_HTTPS2.png?raw=true)
 
