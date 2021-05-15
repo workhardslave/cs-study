@@ -124,8 +124,8 @@ DIGEST = PBKDF2(PRF, Password, Salt, c, DLen)
 
 ## 2) 클린코드 예시
 
-> [카카오헤어샵](https://brunch.co.kr/@cg4jins/2)
-### (1) 의미있는 이름 (Naming)
+> [카카오헤어샵 클린코드](https://brunch.co.kr/@cg4jins/2)
+### (1) 의미 있는 이름 짓기
 
 - **준말(약어)은 지양**
 	- Product를 prod로 쓰지 않고 Reservation을 rsv로 쓰지 않음
@@ -135,11 +135,12 @@ DIGEST = PBKDF2(PRF, Password, Salt, c, DLen)
 	- 오퍼레이션만 있는 응용 클래스는 findByShopId(), createShopOne(), addItemToList()처럼 다른 형태의 동사를 사용
 - **클래스명은 명사로**
 	- CreateProductListService, InsertShopSearchBatch, MainDataSourceInitializer 형태로 작성
+	- ProductInfo와 같이 역할이 불분명한 이름은 지양
 - **데이터의 필드명에 클래스명을 중복으로 사용하지 않음**
 	- product.productName (x) -> product.name (o)
 
 
-### (2) 착한 함수 (Function)
+### (2) 간단한 함수
 - **함수는 4줄이 넘지 않도록 작성**
 	- 코드가 길어질 경우 외부 클래스에 위임하고 함수는 가능하면 4줄이 넘기지 않도록 함
 	- 일관된 추상화 수준으로 일관된 추상화 수준으로 함수를 분리
@@ -165,12 +166,12 @@ DIGEST = PBKDF2(PRF, Password, Salt, c, DLen)
 
 - **안 쓰는 소스코드는 주석처리 대신 반드시 삭제**
 - **주석 대신 signature로 대체**
-	- 주석 내용을 메쏘드명, 변수명에 최대한 녹일 수 있도록 했습니다.
+	- 주석 내용을 메쏘드명, 변수명에 최대한 녹일 수 있도록 함
 
 
 ### (4) 객체
 - **생성자 대신 정적 팩토리 메쏘드**
-	- 비즈니스 로직에서 객체를 new 해서 생성하지 않게 했습니다. 반드시 Factory를 만들어 정적 메쏘드로 생성하게 했습니다.
+	- 비즈니스 로직에서 객체를 new 해서 생성하지 않게 함. 반드시 Factory를 만들어 정적 메쏘드로 생성하게 함.
 	- 생성자를 직접 사용하지 않은 이유
 		- 생성자는 이름이 없어서 의도를 알 수 없어서 readablity가 떨어짐.
 		- 생성 후 다른 클래스의 인자로 넘기고 그 안에서 다시 set을 하는 것을 방지할 수 있음.
@@ -192,7 +193,7 @@ DIGEST = PBKDF2(PRF, Password, Salt, c, DLen)
   - 긴 메소드
   - 거대한 클래스
   - 절차지향으로 구현한 코드
-  - Switch 문 : 객체지향 특징을 살리기 위해서는 switch-case 문을 적게 사용해야 함 (switch문은 오버라이드로 다 바꾸자)
+  - Switch 문 *객체지향 특징을 살리기 위해서는 switch-case 문을 적게 사용해야 함 (switch문은 오버라이드로 다 바꾸자)*
 
   
 ## 4) 리팩토링 예시
@@ -337,11 +338,23 @@ public class RegularPrice extends Price{
  
 # 3. TDD (Test-Driven-Development) 
 
-## 1) 정의
-- 테스트 케이스 작성으로 구현을 시작하는 것
-- ‘제대로 동작(works)’하면서 ‘깔끔함 (clean)’까지 동등한 수준의 개발 목표로 삼는다는 점이 일반적인 개발 방식과 다르다. 
-- TDD에서 말하는 단위 테스트는 일반적으로 메소드 단위의 테스트를 뜻함</br>
-*추후 추가.....*
+## 1) 정의 및 특징
+- TDD : 테스트 케이스 작성으로 구현을 시작하는 것
+- 목적 : **제대로 동작(works)** + **깔끔함 (clean)**
+- 구조
+![img](https://postfiles.pstatic.net/MjAyMTA1MTVfODMg/MDAxNjIxMDY2MDc0MjU4.pxVq27vhDNliGs6Igr44yYRIxoYJJaIY-8ruDuP0ASsg.K9Zu7vcjugIPeU9BVHz7Wcag_PVrseHaiyVRhg-6Gg0g.PNG.qkralsdk39/TDD.png?type=w580)
+	- Red 단계 : 실패하는 테스트 코드를 먼저 작성
+	- Green 단계 : 테스트를 성공시키기 위한 실제 코드를 작성
+	- Yellow 단계 : 중복 코드 제거, 일반화 등의 리팩토링을 수행
+- 테스트의 종류
+	- Unit Tests : 전체 코드 중 작은 부분을 테스트하는 것 (ex. 함수)
+	- Integration Tests : 서로 다른 시스템들의 상호작용이 잘 이루어 지는지 테스트하는 것
+	
+	
+## 2) 예시 및 관련서
+> [카카오헤어샵 TDD](https://brunch.co.kr/@cg4jins/9)</br>
+> [TDD 실천법과 도구](https://repo.yona.io/doortts/blog/issue/1) 
+
 
 
  
@@ -349,12 +362,14 @@ public class RegularPrice extends Price{
 <br></br>
 <br></br>
 > Reference</br>
-> 암호화</br>
+> 1. 암호화</br>
 > [안전한 패스워드 저장](https://d2.naver.com/helloworld/318732)
 > [해시값의 복호화](https://jusungpark.tistory.com/35)</br>
-> https://seed.kisa.or.kr/kisa/intro/EgovDefinition.do</br>
+> [암호기술의 정의](https://seed.kisa.or.kr/kisa/intro/EgovDefinition.do)</br>
 > [ITWorld 용어풀이 | 암호화 해시 함수](https://www.itworld.co.kr/news/94202)</br>
-> https://kim6394.tistory.com/213</br>
+> 2. 클린코드, 리팩토링</br>
+> [클린코드(Clean Code)와 리팩토링(Refactoring)](https://kim6394.tistory.com/213)</br>
 > [리팩토링](https://thekizel.tistory.com/entry/Refactorying-%EC%B2%AB%EB%B2%88%EC%A7%B8-%EC%98%88%EC%A0%9C%EC%97%90%EC%84%9C-%EC%9D%B8%EC%83%81-%EA%B9%8A%EC%97%88%EB%8D%98-%EC%BD%94%EB%93%9C)</br>
+> 3. TDD</br>
 > [TDD(Test-Driven-Development) 방법론에 대해서](https://wooaoe.tistory.com/33)</br>
-> [TDD 실천법과 도구](https://repo.yona.io/doortts/blog/issue/2) 
+
