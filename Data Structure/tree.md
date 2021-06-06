@@ -85,7 +85,7 @@ void preOrderTraversal(Node node) {
 ```
 
 3. 후위 순회(post-order traversal): 왼쪽 서브트리 -> 오른쪽 서브트리 -> 루트<br>
-4-5-3-2-1
+4-5-2-3-1
 
 ```c++
 void postOrderTraversal(Node node) {
