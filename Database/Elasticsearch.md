@@ -21,6 +21,7 @@
 - 레플리카(Replica): 샤드의 복사본
 
 ## Elasticsearch 장점
+
 - Scale out
   - 샤드를 통해 수평적 확장 가능
 - 고가용성
@@ -35,8 +36,9 @@
 
 ## ELK 스택
 
-
+![ELK](./img/ELK.png)
 
 > Reference
+>
 > - https://m.blog.naver.com/shakey7/221743977964
 > - https://victorydntmd.tistory.com/308
