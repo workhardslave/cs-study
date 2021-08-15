@@ -9,7 +9,7 @@
 
 
 
-
+</br>
 
 ## 1. 입출력 스트림의 종류
 
@@ -166,7 +166,7 @@
 
 #### <참고> 기존I/O프로세스와 커널 Buffer
 
-![I:O](/Users/mina/Desktop/mina/mina/cs-study/JAVA/img/I:O.png)
+![I:O](https://github.com/workhardslave/cs-study/blob/main/JAVA/img/I:O.png?raw=true)
 
 - 유저 영역 : 실행 중인 프로그램이 존재하는 영역(하드웨어에 직접 접근 불가)
 
@@ -187,6 +187,7 @@
   
 
 그러나 해당 IO 프로세는 3)의 과정이 비효율적이라는 문제점이 존재한다. 왜냐하면 커널안의 버퍼 데이터를 프로세스 안으로 다시 복사하기 때문이다.
+
 그렇다면 만약 3)의 과정을 없애고 **커널영역에 바로 접근할 수 있다면 어떻게 될까? 만약 이게 가능하다면 버퍼를 복사하는 CPU를 낭비하지도 , GC관리를 따로 하지 않아도 I/O를 사용**할 수 있게 된다. 이를 위한 방법으로 커널 Buffer를 사용할 수 있다.
 
 
@@ -204,6 +205,8 @@
 > #### Reference
 >
 > https://www.notion.so/I-O-af9b3036338c43a8bf9fa6a521cda242
+>
 > https://bingbingpa.github.io/java/whiteship-live-study-week13/
+>
 > 혼자 공부하는 자바
 
