@@ -32,8 +32,9 @@
 
 - OutputStream은 추상 클래스로 바이트 기반 출력 스트림의 최상위 클래스
 - 모든 바이트 기반 출력 스트림 클래스는 OutputStream 클래스를 상속받아 만들어짐
-  - `FileOutputStream`, `PrintStream`, `ButteredOutputStream`, `DataOutputStream`
-
+  
+- `FileOutputStream`, `PrintStream`, `ButteredOutputStream`, `DataOutputStream`
+  
 - OutputStream 클래스의 주요 메소드는 다음과 같다.
 
   - 출력 스트림은 출력할 바이트를 바로 내보내는 것이 아니라 내부 버퍼에 저장해놓고 한번에 출력한다.
@@ -60,8 +61,9 @@
 
 - InputStream은 추상 클래스로 바이트 기반 입력 스트림의 최상위 클래스
 - 모든 바이트 기반 입력 스트림 클래스는 InputStream 클래스를 상속받아 만들어짐
-  - `FileInputStream`,  `ButteredInputStream`, `DataInputStream`
-
+  
+- `FileInputStream`,  `ButteredInputStream`, `DataInputStream`
+  
 - InputStream 클래스의 주요 메소드는 다음과 같다.
 
   | 메서드                           | 설명                                                         |
@@ -85,19 +87,19 @@
 
 
 
-#### (1) BufferedOutputStream, ButteredWrite
+#### (1) BufferedOutputStream, BufferedWriter
 
 - 프로그램에서 전송한 데이터를 내부 버퍼에 쌓아 두었다가 버퍼가 꽉 차면 버퍼의 모든 데이터를 한꺼번에 보내는 출력 스트림. 프로그램 입장에서는 메모리 버퍼로 데이터를 고속 전송하기 때문에 출력 성능이 향상되는 효과를 얻게 된다.
   - BufferedOutputStream : 바이트 기반 출력 스트림에 연결되어 버퍼를 제공하는 보조 스트림
-  - ButteredWrite : 문자 기반 출력 스트림에 연결되어 버퍼 제공하는 보조 스트림
+  - BufferedWriter : 문자 기반 출력 스트림에 연결되어 버퍼 제공하는 보조 스트림
 
 
 
-#### (2) BufferedInputStream, ButteredReader
+#### (2) BufferedInputStream, BufferedReader
 
 - 입력 소스로부터 자신의 내부 버퍼 크기만큼 데이터를 미리 읽고 버퍼에 저장해둔다. 프로그램은 외부의 입력 소스로부터 직접 읽는 대신 버퍼로부터 읽음으로써 읽기 성능을 향상한다.
   - BufferedInputStream : 바이트 기반 입력 스트림에 연결되어 버퍼를 제공하는 보조 스트림
-  - ButteredReader : 문자 기반 압력 스트림에 연결되어 버퍼 제공하는 보조 스트림
+  - BufferedReader : 문자 기반 압력 스트림에 연결되어 버퍼 제공하는 보조 스트림
 
 
 
