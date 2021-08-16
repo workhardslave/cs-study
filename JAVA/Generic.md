@@ -94,8 +94,8 @@ public static void main(String[] args){
 
 > 제네릭으로 구현된 메소드의 경우 선언된 타입으로만 매개변수를 입력해야 한다.  상속받은 클래스 혹은 부모 클래스를 사용하고 싶어도 불가능하고, 어떤 타입이 와도 상관없는 경우 좋지 않은데, 이 때 WildCard를 사용한다
 
-- <? super T> - Lower Bounded: 와일드 카드의 상한 제한. T와 그 자식들만 가능
-- <? extends T>  - Upper Bounded: 와일드 카드의 하한 제한. T와 그 조상들만 가능
+- <? super T> - Upper Bounded: 와일드 카드의 상한 제한. T와 그 조상들만 가능
+- <? extends T>  - Lower Bounded: 와일드 카드의 하한 제한. T와 그 자식들만 가능
 - <?> - Unbounded : 제한 없이 모든 타입 가능. <? extends Object> 와 동일하다.
 
 ```java
